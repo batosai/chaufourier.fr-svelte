@@ -1,0 +1,32 @@
+{
+  "name": "chaufourier.fr",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "tailwind": "tailwindcss build src/styles/theme.css -o static/theme.css",
+    "tailbuild": "env NODE_ENV=production tailwindcss build src/styles/theme.css -o static/theme.css"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "next",
+    "@sveltejs/kit": "next",
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.2.6",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "kutty": "^0.5.1",
+    "postcss": "^8.3.0",
+    "prettier": "^2.3.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "svelte": "^3.34.0",
+    "tailwindcss": "^2.1.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "@prismicio/client": "^5.0.0"
+  }
+}
