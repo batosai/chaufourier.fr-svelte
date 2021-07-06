@@ -1,4 +1,4 @@
-<section class="px-4 py-12 lg:py-32 mx-auto w-full bg-blue-400 bg-center bg-no-repeat bg-cover" style="background-image: url('/hero.jpg');">
+<section class="px-4 py-12 lg:py-32 mx-auto w-full bg-blue-400 bg-center bg-no-repeat bg-cover sm:bg-hero-modern md:bg-hero-modern lg:bg-hero">
   <div class="w-full mx-auto lg:w-8/12 xl:w-5/12">
     <div class="bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
         <div id="header-buttons" class="py-3 px-4 flex">
