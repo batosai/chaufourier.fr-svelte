@@ -4,7 +4,6 @@
       “Un bon développeur n'est pas celui qui code le plus vite.<br />
       C'est celui qui met tout en oeuvre pour qu'à n'importe quel moment du cycle de vie du projet, il soit plus facile d'itérer.“
     </h1>
-    <div class="mx-auto mb-3 shadow-lg avatar text-white">IS</div>
     <p class="text-base font-medium text-gray-200">Iwata-San</p>
   </div>
 </section>
