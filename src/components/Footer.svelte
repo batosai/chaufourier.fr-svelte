@@ -7,7 +7,7 @@
 <footer class="flex flex-col items-center justify-between px-4 py-12 mx-auto max-w-7xl md:flex-row">
   <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">© Copyright {year}. All Rights Reserved.</p>
   <div class="flex items-center space-x-6">
-    <a href="https://twitter.com/chaufourier">
+    <a href="https://twitter.com/chaufourier" target="_blank">
       <span class="sr-only">Twitter</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2031" viewBox="-0.25 -0.25 1109.5 901.5" class="w-5 h-5" aria-hidden="true">
         <path
@@ -24,7 +24,7 @@
         />
       </svg>
     </a>
-    <a href="https://fr.linkedin.com/in/jeremychaufourier">
+    <a href="https://fr.linkedin.com/in/jeremychaufourier" target="_blank">
       <span class="sr-only">LinkedIn</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="7.025 7.025 497.951 497.95" class="w-5 h-5" aria-hidden="true">
         <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-974.482" y1="1306.773" x2="-622.378" y2="1658.877" gradientTransform="translate(1054.43 -1226.825)">
@@ -37,7 +37,7 @@
         />
       </svg>
     </a>
-    <a href="https://github.com/batosai">
+    <a href="https://github.com/batosai" target="_blank">
       <span class="sr-only">Github</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path
