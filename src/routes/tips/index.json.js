@@ -3,9 +3,20 @@ import Prismic from "@prismicio/client";
 
 export async function get({ query, params }) {
   let page = query.has("page") ? query.get("page") : 1;
+  const search = query.has("search") ? query.get("search") : null;
+
+  const predicates = [
+    Prismic.Predicates.at("document.type", "tips"),
+  ]
+
+  if (search) {
+    predicates.push(
+      Prismic.Predicates.fulltext('document', search)
+    );
+  }
 
   const response = await client.query(
-    Prismic.Predicates.at("document.type", "tips"),
+    predicates,
     { pageSize: 10, page }
   );
 
