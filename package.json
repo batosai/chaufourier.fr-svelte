@@ -1,6 +1,8 @@
 {
   "name": "chaufourier.fr",
   "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "svelte-kit dev",
     "postcss:watch": "TAILWIND_MODE=watch postcss tailwind.css -o build.css",

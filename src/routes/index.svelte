@@ -6,8 +6,11 @@
 </script>
 
 <svelte:head>
-	<title>Directeur téchnique - développeur WEB / Mobile</title>
-  <meta name="description" content="Développeur backend / frontend et mobile pour vos projets.">
+  <title>Directeur téchnique - développeur WEB / Mobile</title>
+  <meta
+    name="description"
+    content="Développeur backend / frontend et mobile pour vos projets."
+  />
 </svelte:head>
 
 <Hero />

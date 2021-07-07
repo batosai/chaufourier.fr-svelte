@@ -1,7 +1,7 @@
 <script context="module">
-	export async function load({ page, fetch }) {
+  export async function load({ page, fetch }) {
     let articles;
-    let currentPage = page.query.has('page') ? page.query.get('page') : 1;
+    let currentPage = page.query.has("page") ? page.query.get("page") : 1;
 
     try {
       articles = await fetch(`/tips.json?page=${currentPage}`);
@@ -10,7 +10,8 @@
       console.log(e);
     }
 
-    let nextPage = articles.page < articles.total_pages ? articles.page + 1 : null;
+    let nextPage =
+      articles.page < articles.total_pages ? articles.page + 1 : null;
     let prevPage = articles.page > 1 ? articles.page - 1 : null;
 
     return {
@@ -18,9 +19,9 @@
         articles: articles.results,
         nextPage: nextPage,
         prevPage: prevPage,
-      }
+      },
     };
-	}
+  }
 </script>
 
 <script>
@@ -33,13 +34,18 @@
 
 <svelte:head>
   <title>Trucs et astuces | chaufourier.fr</title>
-  <meta name="description" content="Trucs et astuces pour développeurs">
+  <meta name="description" content="Trucs et astuces pour développeurs" />
 </svelte:head>
 
 <section class="w-full px-4 py-24 mx-auto max-w-7xl md:w-3/4 lg:w-2/4">
   <div class="mb-12 text-left md:text-center">
-    <h2 class="mb-2 text-3xl font-extrabold leading-tight text-gray-900">Trucs et astuces</h2>
-    <p class="text-lg text-gray-500">Parce que nous ne sommes pas des machines, je consacre cette partie pour y référencer des tips, penses-bête et toutes sortes d'informations.</p>
+    <h2 class="mb-2 text-3xl font-extrabold leading-tight text-gray-900">
+      Trucs et astuces
+    </h2>
+    <p class="text-lg text-gray-500">
+      Parce que nous ne sommes pas des machines, je consacre cette partie pour y
+      référencer des tips, penses-bête et toutes sortes d'informations.
+    </p>
 
     <!-- <div class="mt-6 bg-transparent border rounded-md dark:border-gray-700  focus-within:ring ring-primary focus-within:border-teal-500 ring-opacity-40">
       <form action="/search" class="flex flex-wrap justify-between md:flex-row">
@@ -49,14 +55,20 @@
         </button>
       </form>
     </div> -->
-
   </div>
   <div class="flex flex-col space-y-12 divide-y divide-gray-200">
     {#each articles as article}
       <div>
-        <p class="pt-12 mb-3 text-sm font-normal text-gray-500">{humanDate(article.last_publication_date)}</p>
-        <h2 class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl">
-          <a href="/tips/{article.uid}" class="text-gray-900 hover:text-blue-700">{article.data.title}</a>
+        <p class="pt-12 mb-3 text-sm font-normal text-gray-500">
+          {humanDate(article.last_publication_date)}
+        </p>
+        <h2
+          class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl"
+        >
+          <a
+            href="/tips/{article.uid}"
+            class="text-gray-900 hover:text-blue-700">{article.data.title}</a
+          >
           {#each article.tags as tag, index}
             <span class="badge bg-primary text-white">
               {tag}
@@ -64,24 +76,36 @@
           {/each}
         </h2>
         {#each article.data.preview as c}
-          {#if c.type == 'paragraph'}
+          {#if c.type == "paragraph"}
             <p class="mb-4 text-base font-normal text-gray-600">{c.text}</p>
-          {:else if c.type == 'preformatted'}
+          {:else if c.type == "preformatted"}
             <div class="prose mx-auto mb-5">
               <pre>{c.text}</pre>
             </div>
           {/if}
         {/each}
-        <a href="/tips/{article.uid}" class="btn btn-light btn-sm">Continuer à lire</a>
+        <a href="/tips/{article.uid}" class="btn btn-light btn-sm"
+          >Continuer à lire</a
+        >
       </div>
     {/each}
   </div>
-  <div class="flex flex-col items-center justify-center pt-12 mt-12 space-x-0 space-y-2 border-t border-gray-200 md:space-x-2 md:space-y-0 md:flex-row">
+  <div
+    class="flex flex-col items-center justify-center pt-12 mt-12 space-x-0 space-y-2 border-t border-gray-200 md:space-x-2 md:space-y-0 md:flex-row"
+  >
     {#if prevPage}
-      <a href="/tips?page={prevPage}" class="w-full rounded-full btn btn-light btn-xl md:w-auto">Page Précédente</a>
+      <a
+        href="/tips?page={prevPage}"
+        class="w-full rounded-full btn btn-light btn-xl md:w-auto"
+        >Page Précédente</a
+      >
     {/if}
     {#if nextPage}
-      <a href="/tips?page={nextPage}" class="w-full rounded-full btn btn-light btn-xl md:w-auto">Page Suivante</a>
+      <a
+        href="/tips?page={nextPage}"
+        class="w-full rounded-full btn btn-light btn-xl md:w-auto"
+        >Page Suivante</a
+      >
     {/if}
   </div>
 </section>

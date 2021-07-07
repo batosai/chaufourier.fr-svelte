@@ -2,7 +2,7 @@
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
 
-  import "../styles/theme.css"
+  import "../styles/theme.css";
 </script>
 
 <!-- <svelte:head>
