@@ -13,7 +13,7 @@ export async function get({ params }) {
   return {
     body: {
       data: response.data,
-      last_publication_date: response.last_publication_date,
+      first_publication_date: response.first_publication_date,
       tags: response.tags,
     },
   };

@@ -69,7 +69,7 @@
       <time
         itemprop="datePublished dateModified"
         datetime="2010-08-07 11:11:03-0400"
-        pubdate>{humanDate(article.last_publication_date)}</time
+        pubdate>{humanDate(article.first_publication_date)}</time
       >
     </p>
   </div>

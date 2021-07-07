@@ -64,7 +64,7 @@
       {#each articles as article}
         <div>
           <p class="pt-12 mb-3 text-sm font-normal text-gray-500">
-            {humanDate(article.last_publication_date)}
+            {humanDate(article.first_publication_date)}
           </p>
           <h2
             class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl"
