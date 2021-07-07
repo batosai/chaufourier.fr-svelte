@@ -1,5 +1,5 @@
 <section
-  class="px-4 py-12 lg:py-32 mx-auto w-full bg-blue-400 bg-center bg-no-repeat bg-cover bg-hero-modern lg:bg-hero"
+  class="px-4 py-12 lg:py-32 mx-auto w-full bg-blue-400 bg-center bg-no-repeat bg-cover lg:bg-hero"
 >
   <div class="w-full mx-auto lg:w-8/12 xl:w-5/12">
     <div class="bg-gray-800 shadow-2xl rounded-lg overflow-hidden">
