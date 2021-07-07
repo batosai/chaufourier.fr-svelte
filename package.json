@@ -14,16 +14,16 @@
     "tailbuild": "env NODE_ENV=production tailwindcss --purge build -i src/styles/theme.css -o static/theme.css"
   },
   "devDependencies": {
-    "@sveltejs/adapter-vercel": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-vercel": "^1.0.0-next.24",
+    "@sveltejs/kit": "^1.0.0-next.122",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.6",
-    "eslint": "^7.22.0",
+    "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-svelte3": "^3.2.0",
     "kutty": "^0.5.1",
     "postcss": "^8.3.5",
-    "prettier": "^2.3.1",
+    "prettier": "^2.3.2",
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0",
     "tailwindcss": "^2.1.3"
