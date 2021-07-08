@@ -4,6 +4,8 @@
     const currentPage = page.query.has("page") ? page.query.get("page") : 1;
     const search = page.query.has("search") ? page.query.get("search") : "";
 
+
+
     try {
       articles = await fetch(`/tips.json?page=${currentPage}&search=${search}`);
       articles = await articles.json();
@@ -18,6 +20,7 @@
     return {
       props: {
         articles: articles.results,
+        currentPage,
         nextPage,
         prevPage,
         search
@@ -30,9 +33,28 @@
   import { humanDate } from "$lib/utils";
 
   export let articles;
+  export let currentPage;
   export let prevPage;
   export let nextPage;
   export let search;
+
+  $: search = search;
+
+  async function searchClick(event) {
+    event.preventDefault();
+
+    try {
+      articles = await fetch(`/tips.json?page=${currentPage}&search=${search}`);
+      articles = await articles.json();
+
+      nextPage = articles.page < articles.total_pages ? articles.page + 1 : null;
+      prevPage = articles.page > 1 ? articles.page - 1 : null;
+      articles = articles.results
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
 </script>
 
 <svelte:head>
@@ -51,8 +73,8 @@
     </p>
 
     <div class="mt-6 bg-transparent border rounded-md dark:border-gray-700  focus-within:ring ring-primary focus-within:border-teal-500 ring-opacity-40">
-      <form action="/tips" class="flex flex-wrap justify-between md:flex-row">
-        <input type="search" name="search" value={search} placeholder="Recherche" class="flex-1 px-4 h-10 lg:h-12 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" />
+      <form on:submit={searchClick} class="flex flex-wrap justify-between md:flex-row">
+        <input type="search" name="search" value={search} on:input={e => search = e.target.value} placeholder="Recherche" class="flex-1 px-4 h-10 lg:h-12 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" />
         <button type="submit" class="flex justify-center items-center w-full lg:w-12 lg:h-12 p-2 lg:p-0 m-1 text-white transition-colors duration-200 transform rounded-md bg-primary hover:bg-teal-300 focus:outline-none focus:bg-teal-300">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </button>
