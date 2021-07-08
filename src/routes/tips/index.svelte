@@ -4,8 +4,6 @@
     const currentPage = page.query.has("page") ? page.query.get("page") : 1;
     const search = page.query.has("search") ? page.query.get("search") : "";
 
-
-
     try {
       articles = await fetch(`/tips.json?page=${currentPage}&search=${search}`);
       articles = await articles.json();
@@ -13,14 +11,12 @@
       console.log(e);
     }
 
-    let nextPage =
-      articles.page < articles.total_pages ? articles.page + 1 : null;
+    let nextPage = articles.page < articles.total_pages ? articles.page + 1 : null;
     let prevPage = articles.page > 1 ? articles.page - 1 : null;
 
     return {
       props: {
         articles: articles.results,
-        currentPage,
         nextPage,
         prevPage,
         search
@@ -33,18 +29,21 @@
   import { humanDate } from "$lib/utils";
 
   export let articles;
-  export let currentPage;
   export let prevPage;
   export let nextPage;
   export let search;
 
+  $: prevPage = prevPage;
+  $: nextPage = nextPage;
   $: search = search;
 
   async function searchClick(event) {
     event.preventDefault();
 
+    search = event.target.elements[0].value;
+
     try {
-      articles = await fetch(`/tips.json?page=${currentPage}&search=${search}`);
+      articles = await fetch(`/tips.json?search=${search}`);
       articles = await articles.json();
 
       nextPage = articles.page < articles.total_pages ? articles.page + 1 : null;
