@@ -41,7 +41,7 @@
         Wordpress
       </h3>
       <p class="text-sm text-gray-500">
-        est un système de gestion de contenu(CMS).<br /> Ce logiciel écrit en PHP.
+        est un système de gestion de contenu(CMS).<br /> Ce logiciel est écrit en PHP.
       </p>
     </div>
     <div>
@@ -52,7 +52,7 @@
         Magento
       </h3>
       <p class="text-sm text-gray-500">
-        est une plateforme de commerce électronique.<br /> Ce logiciel écrit en PHP.
+        est une plateforme de commerce électronique.<br /> Ce logiciel est écrit en PHP.
       </p>
     </div>
     <div>
@@ -74,7 +74,7 @@
         Preact
       </h3>
       <p class="text-sm text-gray-500">
-        est une bibliothèque javascript inspiré de React de seuelement 3 ko.
+        est une bibliothèque javascript inspiré de React de seulement 3 ko.
       </p>
     </div>
     <div>
@@ -85,7 +85,7 @@
         Svelte
       </h3>
       <p class="text-sm text-gray-500">
-        est un framework JavaScript permetta,t de créer simplement des
+        est un framework JavaScript permettant de créer simplement des
         composants réactifs.
       </p>
     </div>
