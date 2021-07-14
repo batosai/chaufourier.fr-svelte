@@ -74,12 +74,12 @@
     </p>
   </div>
 
-  <div class="mx-auto">
+  <div class="mx-auto max-w-3xl">
     {#each article.data.content as c}
       {#if c.type == "paragraph"}
         <p class="mb-4 text-base font-normal text-gray-600">{c.text}</p>
       {:else if c.type == "preformatted"}
-        <div class="prose mx-auto mb-5 max-w-3xl">
+        <div class="prose mb-5 max-w-3xl">
           <pre>{c.text}</pre>
         </div>
       {/if}
