@@ -1,9 +1,9 @@
 <script context="module">
-  export async function load({ page, fetch }) {
+  export async function load({ params, fetch }) {
     let article;
 
     try {
-      article = await fetch(`/tips/${page.params.slug}.json`);
+      article = await fetch(`/tips/${params.slug}.json`);
       article = await article.json();
     } catch (e) {
       console.log(e);

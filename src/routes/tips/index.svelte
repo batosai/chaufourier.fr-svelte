@@ -1,8 +1,8 @@
 <script context="module">
-  export async function load({ page, fetch }) {
+  export async function load({ url, fetch }) {
     let articles;
-    const currentPage = page.query.has("page") ? page.query.get("page") : 1;
-    const search = page.query.has("search") ? page.query.get("search") : "";
+    const currentPage = url.searchParams.has("page") ? url.searchParams.get("page") : 1;
+    const search = url.searchParams.has("search") ? url.searchParams.get("search") : "";
 
     try {
       articles = await fetch(`/tips.json?page=${currentPage}&search=${search}`);

@@ -1,9 +1,9 @@
 import client from "$lib/prismic";
 import Prismic from "@prismicio/client";
 
-export async function get({ query, params }) {
-  let page = query.has("page") ? query.get("page") : 1;
-  const search = query.has("search") ? query.get("search") : null;
+export async function get({ url, params }) {
+  let page = url.searchParams.has("page") ? url.searchParams.get("page") : 1;
+  const search = url.searchParams.has("search") ? url.searchParams.get("search") : null;
 
   const predicates = [
     Prismic.Predicates.at("document.type", "tips"),
